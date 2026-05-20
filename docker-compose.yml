@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: books-scraper
+    # Monta o diretório de saída no host para acessar os arquivos gerados
+    # sem precisar copiar de dentro do container
+    volumes:
+      - ./app/public:/app/app/public
+      - ./app/logs:/app/app/logs
+    environment:
+      # Modo headless obrigatório em containers (sem display)
+      - PYTHONUNBUFFERED=1
