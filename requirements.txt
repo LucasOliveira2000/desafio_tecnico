@@ -1,0 +1,7 @@
+﻿playwright
+playwright-stealth
+pandas
+openpyxl
+flake8
+pytest
+pytest-mock
